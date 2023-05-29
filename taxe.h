@@ -4,22 +4,22 @@
 #include "inttypes.h"
 typedef double Taxe;
 //Constantes sur les taxes annuelles en euros
-const char* const MONNAIE = "Euros";
+#define MONNAIE "Euros"
 
-const uint8_t TAXE_BASE_VOILIER = 50;
-const uint8_t TAXE_BASE_MOTEUR = 100;
+#define TAXE_BASE_VOILIER 50
+#define TAXE_BASE_MOTEUR 100
 
-const uint8_t VOILIER_LIMITE_TAILLE_VOILE = 200;//200m^2
-const uint8_t TAXE_VOILIER_PETITE_VOILE = 0;
-const uint8_t TAXE_VOILIER_GRANDE_VOILE = 25;
+#define VOILIER_LIMITE_TAILLE_VOILE 200//200m^2
+#define TAXE_VOILIER_PETITE_VOILE 0
+#define TAXE_VOILIER_GRANDE_VOILE 25
 
-const uint8_t PECHE_LIMITE_TONNAGE = 20;//20 tonnes
-const uint8_t TAXE_PECHE_PETIT_TONNAGE = 0;
-const uint8_t TAXE_PECHE_GRAND_TONNAGE = 100;
+#define PECHE_LIMITE_TONNAGE 20//20 tonnes
+#define TAXE_PECHE_PETIT_TONNAGE 0
+#define TAXE_PECHE_GRAND_TONNAGE 100
 
-const uint8_t PLAISANCE_LIMITE_MOTEUR = 100;//100 CV
-const uint8_t TAXE_PLAISANCE_PETIT_MOTEUR = 50;
-const uint8_t TAXE_PLAISANCE_GRAND_MOTEUR_FACTEUR = 15;//15 par mètre de la longueur
+#define PLAISANCE_LIMITE_MOTEUR 100//100 CV
+#define TAXE_PLAISANCE_PETIT_MOTEUR 50
+#define TAXE_PLAISANCE_GRAND_MOTEUR_FACTEUR 15//15 par mètre de la longueur
 
 // fonction de calcul des taxes
 

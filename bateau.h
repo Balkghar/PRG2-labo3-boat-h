@@ -3,9 +3,9 @@
 #include "inttypes.h"
 
 typedef enum { MOTEUR, VOILIER } BateauType;
-const char* BATEAU_TYPES[2] = {"moteur", "voile"};
+static const char* BATEAU_TYPES[] = {"moteur", "voile"};
 typedef enum { PECHE, PLAISANCE } BateauMoteurType;
-const char* BATEAU_CATEGORIES[2] = {"peche", "plaisance"};
+static const char* BATEAU_CATEGORIES[] = {"peche", "plaisance"};
 
 typedef struct Bateau {
 	const char* nom;

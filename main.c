@@ -1,10 +1,11 @@
 #include "bateau.h"
 #include "bateau_affichage.h"
+#include "port.h"
 #include <stdio.h>
 #include <stdlib.h>
-
+#define PORT_TAILLE 7
 int main(void) {
-	Bateau port[] = {
+	Bateau port[PORT_TAILLE] = {
 		//Quelques bateaux à voiles
 		{.nom = "L'aventurier",
 		 .type = VOILIER,
@@ -37,10 +38,7 @@ int main(void) {
 																  .proprietaire = "Jeanne Milou"}}},
 	};
 
-	// afficherPort(port);
-	for (int i = 0; i < 7; i++) {
-		afficherBateau(&port[i]);
-		printf("\n\n");
-	}
+	afficherBateauxParTaxeDecroissante(port, PORT_TAILLE);
+
 	return EXIT_SUCCESS;
 }
