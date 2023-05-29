@@ -41,5 +41,5 @@ void afficherBateau(const TaxeCalculee* taxeCalculee) {
 					 taxeCalculee->bateau->details.voilier.surfaceVoilure);
 			break;
 	}
-	printf("taxe annuelle : %g\n", taxeCalculee->taxe);
+	printf("Taxe annuelle : %g\n", taxeCalculee->taxe);
 }
