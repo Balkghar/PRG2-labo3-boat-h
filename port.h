@@ -1,11 +1,12 @@
 #ifndef PORT_H
 #define PORT_H
 #include "bateau.h"
+#include "taxe.h"
 #include <stddef.h>
 
 //Struct permettant de stocker la taxe calculée pour un bateau donné
 typedef struct {
-	double taxe;
+	Taxe taxe;
 	const Bateau* bateau;
 } TaxeCalculee;
 
