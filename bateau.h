@@ -34,6 +34,5 @@ typedef struct Bateau {
 	} details;
 } Bateau;
 
-// TODO: compléter la struct Bateau
 
 #endif
