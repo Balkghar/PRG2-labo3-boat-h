@@ -1,6 +1,6 @@
 #include "taxe.h"
 
-double calculBateauTaxe(const Bateau* bateau) {
+Taxe calculBateauTaxe(const Bateau* bateau) {
 	switch ((*bateau).type) {
 		case MOTEUR:
 			return TAXE_BASE_MOTEUR + calculBateauTaxeSpecifique(bateau);
@@ -14,7 +14,7 @@ double calculBateauTaxe(const Bateau* bateau) {
 	}
 }
 
-double calculBateauTaxeSpecifique(const Bateau* bateau) {
+Taxe calculBateauTaxeSpecifique(const Bateau* bateau) {
 	switch ((*bateau).details.motorise.sousCategorie) {
 		case PECHE:
 			return ((*bateau).details.motorise.details.peche.tonnageMax <

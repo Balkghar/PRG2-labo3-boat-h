@@ -2,6 +2,7 @@
 #define TAXE_H
 #include "bateau.h"
 #include "inttypes.h"
+typedef double Taxe;
 //Constantes sur les taxes annuelles en euros
 const char* const MONNAIE = "Euros";
 
@@ -23,9 +24,9 @@ const uint8_t TAXE_PLAISANCE_GRAND_MOTEUR_FACTEUR = 15;//15 par mètre de la lon
 // fonction de calcul des taxes
 
 //calcul la taxe spécifique pour un bateau à moteur
-double calculBateauTaxeSpecifique(const Bateau* bateau);
+Taxe calculBateauTaxeSpecifique(const Bateau* bateau);
 
 //calcul la taxe pour les bateaux à moteur et à voile
-double calculBateauTaxe(const Bateau* bateau);
+Taxe calculBateauTaxe(const Bateau* bateau);
 
 #endif
