@@ -1,13 +1,12 @@
 #ifndef TAXE_H
 #define TAXE_H
+#include "bateau.h"
 #include "inttypes.h"
-
 //Constantes sur les taxes annuelles en euros
 const char* const MONNAIE = "Euros";
 
 const uint8_t TAXE_BASE_VOILIER = 50;
 const uint8_t TAXE_BASE_MOTEUR = 100;
-const uint8_t TAXE_SPECIFIQUE_VOILIER = 100;
 
 const uint8_t VOILIER_LIMITE_TAILLE_VOILE = 200;//200m^2
 const uint8_t TAXE_VOILIER_PETITE_VOILE = 0;
