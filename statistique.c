@@ -6,7 +6,7 @@
 
 double mediane(const double* tableau, size_t taille) {
 
-	double* copieDeTableau = malloc(taille * sizeof(double));
+	double* copieDeTableau = calloc(taille, sizeof(double));
 	double valeurMediane;
 
 	memcpy(copieDeTableau, tableau, taille * sizeof(double));
