@@ -19,9 +19,12 @@ typedef struct Bateau {
 			uint16_t puissanceMoteurs;
 			BateauMoteurType sousCategorie;
 			union {
+				//Pour les sousCategorie PECHE
 				struct {
 					uint8_t tonnageMax;
 				} peche;
+
+				//Pour les sousCategorie PLAISANCE
 				struct {
 					uint8_t longueur;
 					const char* proprietaire;
