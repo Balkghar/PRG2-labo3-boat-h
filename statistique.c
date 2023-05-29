@@ -1,7 +1,7 @@
 #include "statistique.h"
 #include <math.h>
 
-double mediane(double* tab, size_t taille) {
+double mediane(const double* tab, size_t taille) {
 	if (taille % 2) {
 		return (tab[taille / 2] + tab[taille / 2 + 1]) / 2.0;
 	} else {
@@ -9,26 +9,25 @@ double mediane(double* tab, size_t taille) {
 	}
 }
 
-double somme(double* tab, size_t taille) {
+double somme(const double* tab, size_t taille) {
 	double somme = 0;
 
 	for (size_t i = 0; i < taille; ++i) somme += tab[i];
 
-
 	return somme;
 }
 
-double moyenne(double* tab, size_t taille) { return somme(tab, taille) / taille; }
+double moyenne(const double* tab, size_t taille) {
+	return somme(tab, taille) / (double) taille;
+}
 
-double ecartType(double* tab, size_t taille) {
+double ecartType(const double* tab, size_t taille) {
 
-	double moyenn = moyenne(tab, taille);
-	double sommeDiffAuCarre = 0;
+	double valeurMoyenne = moyenne(tab, taille);
+	double sommeCarreDifference = 0;
 
-	for (size_t i = 0; i < taille; ++i) sommeDiffAuCarre += pow(tab[i] - moyenn, 2.0);
+	for (size_t i = 0; i < taille; ++i)
+		sommeCarreDifference += pow(tab[i] - valeurMoyenne, 2.0);
 
-
-	sommeDiffAuCarre /= taille;
-
-	return sqrt(sommeDiffAuCarre);
+	return sqrt(sommeCarreDifference /= (double) taille);
 }
