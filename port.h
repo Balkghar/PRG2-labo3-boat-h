@@ -6,7 +6,7 @@
 //Struct permettant de stocker la taxe calculée pour un bateau donné
 typedef struct {
 	double taxe;
-	Bateau* bateau;
+	const Bateau* bateau;
 } TaxeCalculee;
 
 //Afficher tous les bateaux données en les triant par leur taxe annuelle décroissante
