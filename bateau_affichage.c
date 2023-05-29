@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 void afficherBateau(const TaxeCalculee* taxeCalculee) {
-
+	printf("================================================\n");
 
 	printf("Nom: %s\n", taxeCalculee->bateau->nom);
 
@@ -42,4 +42,6 @@ void afficherBateau(const TaxeCalculee* taxeCalculee) {
 			break;
 	}
 	printf("Taxe annuelle : %g\n", taxeCalculee->taxe);
+
+	printf("================================================\n\n");
 }
