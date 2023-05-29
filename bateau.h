@@ -5,7 +5,7 @@
 typedef enum { MOTEUR, VOILIER } BateauType;
 typedef enum { PECHE, PLAISANCE } BateauMoteurType;
 
-struct Bateau {
+typedef struct Bateau {
 	const char* nom;
 	BateauType type;
 	union {
@@ -20,7 +20,7 @@ struct Bateau {
 			BateauMoteurType sousCategorie;
 			union {
 				struct {
-					uint8_t tonnesPoissonMax;
+					uint8_t tonnageMax;
 				} peche;
 				struct {
 					uint8_t longueur;
@@ -29,10 +29,6 @@ struct Bateau {
 			} details;
 		} motorise;
 	} details;
-};
-
-typedef struct {
-	const char* name;
 } Bateau;
 
 // TODO: compléter la struct Bateau
