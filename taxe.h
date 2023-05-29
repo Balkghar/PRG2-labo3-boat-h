@@ -23,9 +23,9 @@ const uint8_t TAXE_PLAISANCE_GRAND_MOTEUR_FACTEUR = 15;//15 par mètre de la lon
 // fonction de calcul des taxes
 
 //calcul la taxe spécifique pour un bateau à moteur
-double calculBateauTaxeSpecifique(Bateau* bateau);
+double calculBateauTaxeSpecifique(const Bateau* bateau);
 
 //calcul la taxe pour les bateaux à moteur et à voile
-double calculBateauTaxe(Bateau* bateau);
+double calculBateauTaxe(const Bateau* bateau);
 
 #endif
