@@ -18,17 +18,17 @@ void afficherBateau(const TaxeCalculee* taxeCalculee) {
 
 	switch (taxeCalculee->bateau->type) {
 		case MOTEUR:
-			printf("Puissance du moteur : %d\n",
+			printf("Puissance du moteur : %d" PRIu16 "\n",
 					 taxeCalculee->bateau->details.motorise.puissanceMoteurs);
 			switch (taxeCalculee->bateau->details.motorise.sousCategorie) {
 				case PECHE:
 					printf(
-						"Tonnage max de peche : %d\n",
+						"Tonnage max de peche : %" PRIu8 "\n",
 						taxeCalculee->bateau->details.motorise.details.peche.tonnageMax);
 					break;
 				case PLAISANCE:
 					printf(
-						"Longueur du bateau : %d\n",
+						"Longueur du bateau : %" PRIu8 "\n",
 						taxeCalculee->bateau->details.motorise.details.plaisance.longueur);
 					printf("Nom du proprietaire %s\n",
 							 taxeCalculee->bateau->details.motorise.details.plaisance
@@ -37,7 +37,7 @@ void afficherBateau(const TaxeCalculee* taxeCalculee) {
 			}
 			break;
 		case VOILIER:
-			printf("Surface de la voilure : %d\n",
+			printf("Surface de la voilure : %" PRIu16 "\n",
 					 taxeCalculee->bateau->details.voilier.surfaceVoilure);
 			break;
 	}
