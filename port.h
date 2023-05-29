@@ -10,6 +10,9 @@ typedef struct {
 	const Bateau* bateau;
 } TaxeCalculee;
 
+//Fonction de comparaison décroissante des taxes dans TaxeCalculee, pour qsort()
+int comparerTaxeDesc(const void* a, const void* b);
+
 //Afficher tous les bateaux données en les triant par leur taxe annuelle décroissante
 void afficherBateauxParTaxeDecroissante(const Bateau* bateau, size_t taille);
 #endif
