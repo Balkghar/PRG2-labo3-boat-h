@@ -1,4 +1,6 @@
 #include "bateau.h"
+#include "bateau_affichage.h"
+#include <stdio.h>
 #include <stdlib.h>
 
 int main(void) {
@@ -36,5 +38,9 @@ int main(void) {
 	};
 
 	// afficherPort(port);
+	for (int i = 0; i < 7; i++) {
+		afficherBateau(&port[i]);
+		printf("\n\n");
+	}
 	return EXIT_SUCCESS;
 }

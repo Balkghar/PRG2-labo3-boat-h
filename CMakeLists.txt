@@ -5,4 +5,4 @@ set(CMAKE_C_STANDARD 17)
 
 set(CMAKE_C_FLAGS "-Wall -Wextra -Wconversion -Wsign-conversion -Wpedantic -Wformat")
 
-add_executable(boats main.c)
+add_executable(boats main.c bateau_affichage.c bateau.c port.c taxe.c)
