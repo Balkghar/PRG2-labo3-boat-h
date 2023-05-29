@@ -11,7 +11,7 @@ void afficherBateau(const TaxeCalculee* taxeCalculee) {
 
 	if (taxeCalculee->bateau->type == MOTEUR)
 		printf(
-			"de %s",
+			" de %s",
 			BATEAU_CATEGORIES[taxeCalculee->bateau->details.motorise.sousCategorie]);
 
 	printf("\n");
