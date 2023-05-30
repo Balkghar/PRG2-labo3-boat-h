@@ -15,16 +15,13 @@ double mediane(const double* tableau, size_t taille) {
 
 	qsort(copieDeTableau, taille, sizeof(double), comparerDouble);
 
-	if (taille % 2) {
-		valeurMediane = copieDeTableau[taille / 2];
-		free(copieDeTableau);
-		return valeurMediane;
-	} else {
-		valeurMediane =
-			(copieDeTableau[taille / 2 - 1] + copieDeTableau[taille / 2]) / 2.0;
-		free(copieDeTableau);
-		return valeurMediane;
-	}
+	valeurMediane =
+		taille % 2
+			? copieDeTableau[taille / 2]
+			: (copieDeTableau[taille / 2 - 1] + copieDeTableau[taille / 2]) / 2.0;
+
+	free(copieDeTableau);
+	return valeurMediane;
 }
 
 double somme(const double* tableau, size_t taille) {
