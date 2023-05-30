@@ -8,7 +8,7 @@
 
   Remarque(s)    : à compléter
 
-  Compilateur : Mingw-w64 gcc 11.2.0
+  Compilateur : gcc 12.3.1
   ---------------------------------------------------------------------------
 */
 
