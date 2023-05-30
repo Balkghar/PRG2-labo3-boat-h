@@ -29,4 +29,7 @@ int comparerTaxeDesc(const void* a, const void* b);
 
 //Afficher tous les bateaux données en les triant par leur taxe annuelle décroissante
 void afficherBateauxParTaxeDecroissante(const Bateau* bateau, size_t taille);
+
+//Afficher les statistiques de tous les bateaux données triés par type
+void afficherBateauxStatistiquesParType(const Bateau* bateau, size_t taille);
 #endif

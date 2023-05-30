@@ -39,3 +39,13 @@ void afficherBateauxParTaxeDecroissante(const Bateau* bateau, size_t taille) {
 
 	free(taxesCalculees);
 }
+
+void afficherBateauxStatistiquesParType(const Bateau* bateau, size_t taille) {
+	//Calculer les taxes pour chaque bateau
+
+	//Trier les bateaux par la taxe, dans l'ordre décroissant
+
+	//Afficher les bateaux
+
+	free(taxesCalculees);
+}
