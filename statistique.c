@@ -1,9 +1,23 @@
+/*
+  ---------------------------------------------------------------------------
+  Nom du fichier : statistique.c
+  Auteur(s)      : Samuel Roland, Hugo Germano, Patrick Maillard
+  Date creation  : 30.05.2023
+
+  Description    : le but du programme et non le but du laboratoire !!
+
+  Remarque(s)    : à compléter
+
+  Compilateur : Mingw-w64 gcc 11.2.0
+  ---------------------------------------------------------------------------
+*/
+
 #include "statistique.h"
 #include <math.h>
 #include <stdlib.h>
 #include <string.h>
 
-
+// est ce qu'on met le tri dans une autre fonction ou non
 double mediane(const double* tableau, size_t taille) {
 
 	double* copieDeTableau = calloc(taille, sizeof(double));

@@ -1,7 +1,22 @@
+/*
+  ---------------------------------------------------------------------------
+  Nom du fichier : port.c
+  Auteur(s)      : Samuel Roland, Hugo Germano, Patrick Maillard
+  Date creation  : 30.05.2023
+  
+  Description    : le but du programme et non le but du laboratoire !!
+
+  Remarque(s)    : à compléter
+
+  Compilateur : Mingw-w64 gcc 11.2.0
+  ---------------------------------------------------------------------------
+*/
+
+
 #include "port.h"
 #include "bateau_affichage.h"
 #include "stdlib.h"
-#include "taxe.h"
+//#include "taxe.h"
 int comparerTaxeDesc(const void* a, const void* b) {
 	return (int) ((*(TaxeCalculee*) b).taxe - (*(TaxeCalculee*) a).taxe);
 }

@@ -1,3 +1,17 @@
+/*
+  ---------------------------------------------------------------------------
+  Nom du fichier : taxe.c
+  Auteur(s)      : Samuel Roland, Hugo Germano, Patrick Maillard
+  Date creation  : 30.05.2023
+  
+  Description    : le but du programme et non le but du laboratoire !!
+
+  Remarque(s)    : à compléter
+
+  Compilateur : Mingw-w64 gcc 11.2.0
+  ---------------------------------------------------------------------------
+*/
+
 #include "taxe.h"
 
 Taxe calculBateauTaxe(const Bateau* bateau) {
@@ -13,7 +27,7 @@ Taxe calculBateauTaxe(const Bateau* bateau) {
 			return 0.0;
 	}
 }
-
+//todo peut-etre revoir le nom de cet fonction qui n'est que pour les bateau motorisé
 Taxe calculBateauTaxeSpecifique(const Bateau* bateau) {
 	switch (bateau->details.motorise.sousCategorie) {
 		case PECHE:

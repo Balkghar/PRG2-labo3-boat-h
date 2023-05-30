@@ -1,9 +1,26 @@
+/*
+  ---------------------------------------------------------------------------
+  Nom du fichier : main.c
+  Auteur(s)      : Samuel Roland, Hugo Germano, Patrick Maillard
+  Date creation  : 30.05.2023
+
+  Description    : le but du programme et non le but du laboratoire !!
+
+  Remarque(s)    : à compléter
+
+  Compilateur : Mingw-w64 gcc 11.2.0
+  ---------------------------------------------------------------------------
+*/
+
 #include "bateau.h"
-#include "bateau_affichage.h"
+//#include "bateau_affichage.h"
 #include "port.h"
-#include <stdio.h>
+//#include <stdio.h>
 #include <stdlib.h>
+
+// faire une fonction qui calcule la taille du port
 #define PORT_TAILLE 7
+
 int main(void) {
 	Bateau port[PORT_TAILLE] = {
 		//Quelques bateaux à voiles

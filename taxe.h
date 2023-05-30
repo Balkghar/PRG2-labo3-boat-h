@@ -1,7 +1,21 @@
+/*
+  ---------------------------------------------------------------------------
+  Nom du fichier : taxe.h
+  Auteur(s)      : Samuel Roland, Hugo Germano, Patrick Maillard
+  Date creation  : 30.05.2023
+  
+  Description    : le but du programme et non le but du laboratoire !!
+
+  Remarque(s)    : à compléter
+
+  Compilateur : Mingw-w64 gcc 11.2.0
+  ---------------------------------------------------------------------------
+*/
+
 #ifndef TAXE_H
 #define TAXE_H
 #include "bateau.h"
-#include "inttypes.h"
+//#include "inttypes.h"
 typedef double Taxe;
 //Constantes sur les taxes annuelles en euros
 #define MONNAIE "Euros"
