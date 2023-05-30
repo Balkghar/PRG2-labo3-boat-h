@@ -19,7 +19,7 @@
 #include <stdlib.h>
 
 // faire une fonction qui calcule la taille du port
-#define PORT_TAILLE 7
+#define PORT_TAILLE 9
 
 int main(void) {
 	Bateau port[PORT_TAILLE] = {
@@ -67,6 +67,10 @@ int main(void) {
 	};
 
 	afficherBateauxParTaxeDecroissante(port, PORT_TAILLE);
+
+	printf("Statistique sur différent type de bateau :\n\n");
+
+	afficherBateauxStatistiquesParType(port, PORT_TAILLE);
 
 	return EXIT_SUCCESS;
 }

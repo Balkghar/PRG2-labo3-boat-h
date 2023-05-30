@@ -16,10 +16,14 @@
 #include "port.h"
 #include "bateau.h"
 #include "bateau_affichage.h"
+#include "statistique.h"
 #include "stdlib.h"
 #include "taxe.h"
 #include <stddef.h>
-//#include "taxe.h"
+#include <stdio.h>
+
+void afficherStatistique(const char* texte, const double* taxe, size_t taille);
+
 int comparerTaxeDesc(const void* a, const void* b) {
 	return (int) ((*(TaxeCalculee*) b).taxe - (*(TaxeCalculee*) a).taxe);
 }
@@ -83,4 +87,26 @@ void afficherBateauxStatistiquesParType(const Bateau* bateau, size_t taille) {
 				break;
 		}
 	}
+	afficherStatistique("plaisance", taxeBateauPlaisance, tailleTaxeBateauPlaisance);
+	afficherStatistique("peche", taxeBateauPeche, tailleTaxeBateauPeche);
+	afficherStatistique("voilier", taxeBateauVoilier, tailleTaxeBateauVoilier);
+}
+
+void afficherStatistique(const char* texte, const double* taxe, size_t taille) {
+	printf("================================================\n");
+
+
+	printf("Statistiques sur les bateaux de type %s\n\n", texte);
+
+	double valeurMoyenne = moyenne(taxe, taille);
+	double valeurMediane = mediane(taxe, taille);
+	double valeurSomme = somme(taxe, taille);
+	double valeurEcartType = ecartType(taxe, taille);
+
+	printf("Moyenne    : %g " MONNAIE "\n", valeurMoyenne);
+	printf("Mediane    : %g " MONNAIE "\n", valeurMediane);
+	printf("Somme      : %g " MONNAIE "\n", valeurSomme);
+	printf("Ecart-type : %g " MONNAIE "\n", valeurEcartType);
+
+	printf("\n================================================\n\n");
 }
