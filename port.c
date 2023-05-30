@@ -14,8 +14,11 @@
 
 
 #include "port.h"
+#include "bateau.h"
 #include "bateau_affichage.h"
 #include "stdlib.h"
+#include "taxe.h"
+#include <stddef.h>
 //#include "taxe.h"
 int comparerTaxeDesc(const void* a, const void* b) {
 	return (int) ((*(TaxeCalculee*) b).taxe - (*(TaxeCalculee*) a).taxe);
@@ -41,11 +44,43 @@ void afficherBateauxParTaxeDecroissante(const Bateau* bateau, size_t taille) {
 }
 
 void afficherBateauxStatistiquesParType(const Bateau* bateau, size_t taille) {
-	//Calculer les taxes pour chaque bateau
 
-	//Trier les bateaux par la taxe, dans l'ordre décroissant
+	double* taxeBateauPlaisance = calloc(0, sizeof(double));
+	size_t tailleTaxeBateauPlaisance = 0;
+	double* taxeBateauPeche = calloc(0, sizeof(double));
+	size_t tailleTaxeBateauPeche = 0;
+	double* taxeBateauVoilier = calloc(0, sizeof(double));
+	size_t tailleTaxeBateauVoilier = 0;
 
-	//Afficher les bateaux
 
-	free(taxesCalculees);
+	for (size_t i = 0; i < taille; i++) {
+		switch (bateau[i].type) {
+			case MOTEUR:
+				switch (bateau[i].details.motorise.sousCategorie) {
+					case PLAISANCE:
+						++tailleTaxeBateauPlaisance;
+						taxeBateauPlaisance =
+							realloc(taxeBateauPlaisance,
+									  tailleTaxeBateauPlaisance * sizeof(double));
+						taxeBateauPlaisance[tailleTaxeBateauPlaisance - 1] =
+							calculBateauTaxe(&bateau[i]);
+						break;
+					case PECHE:
+						++tailleTaxeBateauPeche;
+						taxeBateauPeche = realloc(taxeBateauPeche,
+														  tailleTaxeBateauPeche * sizeof(double));
+						taxeBateauPeche[tailleTaxeBateauPeche - 1] =
+							calculBateauTaxe(&bateau[i]);
+						break;
+				}
+				break;
+			case VOILIER:
+				++tailleTaxeBateauVoilier;
+				taxeBateauVoilier =
+					realloc(taxeBateauVoilier, tailleTaxeBateauVoilier * sizeof(double));
+				taxeBateauVoilier[tailleTaxeBateauVoilier - 1] =
+					calculBateauTaxe(&bateau[i]);
+				break;
+		}
+	}
 }
