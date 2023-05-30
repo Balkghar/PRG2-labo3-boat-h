@@ -13,16 +13,12 @@
 */
 
 #include "bateau.h"
-//#include "bateau_affichage.h"
 #include "port.h"
-//#include <stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 
-// faire une fonction qui calcule la taille du port
-#define PORT_TAILLE 9
-
 int main(void) {
-	Bateau port[PORT_TAILLE] = {
+	Bateau port[] = {
 		//Quelques bateaux à voiles
 		{.nom = "L'aventurier",
 		 .type = VOILIER,
@@ -66,11 +62,13 @@ int main(void) {
 																  .proprietaire = "Jeanne Milou"}}},
 	};
 
-	afficherBateauxParTaxeDecroissante(port, PORT_TAILLE);
+	const size_t TAILLE_PORT = sizeof(port) / sizeof(Bateau);
+	printf("Affichage des %" PRIuMAX " bateaux du port:\n\n", TAILLE_PORT);
+	afficherBateauxParTaxeDecroissante(port, TAILLE_PORT);
 
-	printf("Statistique sur différent type de bateau :\n\n");
+	printf("\nStatistiques sur différents types de bateau :\n\n");
 
-	afficherBateauxStatistiquesParType(port, PORT_TAILLE);
+	afficherBateauxStatistiquesParType(port, TAILLE_PORT);
 
 	return EXIT_SUCCESS;
 }
