@@ -14,6 +14,8 @@
 
 #include "statistique.h"
 #include <math.h>
+#include <stddef.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
@@ -25,18 +27,15 @@ double mediane(const double* tableau, size_t taille) {
 
 	memcpy(copieDeTableau, tableau, taille * sizeof(double));
 
-	qsort(copieDeTableau, sizeof(double), taille, comparerDouble);
+	qsort(copieDeTableau, taille, sizeof(double), comparerDouble);
 
-	if (taille % 2) {
-		valeurMediane =
-			(copieDeTableau[taille / 2] + copieDeTableau[taille / 2 + 1]) / 2.0;
-		free(copieDeTableau);
-		return valeurMediane;
-	} else {
-		valeurMediane = copieDeTableau[taille / 2 + 1];
-		free(copieDeTableau);
-		return valeurMediane;
-	}
+	valeurMediane =
+		taille % 2
+			? copieDeTableau[taille / 2]
+			: (copieDeTableau[taille / 2 - 1] + copieDeTableau[taille / 2]) / 2.0;
+
+	free(copieDeTableau);
+	return valeurMediane;
 }
 
 double somme(const double* tableau, size_t taille) {
@@ -63,5 +62,9 @@ double ecartType(const double* tableau, size_t taille) {
 }
 
 int comparerDouble(const void* a, const void* b) {
-	return (*(double*) a - *(double*) b);
+	if (*(double*) a > *(double*) b) return 1;
+	else if (*(double*) a < *(double*) b)
+		return -1;
+	else
+		return 0;
 }
