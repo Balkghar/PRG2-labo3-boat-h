@@ -1,7 +1,6 @@
 #include "bateau.h"
 #include "bateau_affichage.h"
 #include "port.h"
-#include "statistique.h"
 #include <stdio.h>
 #include <stdlib.h>
 #define PORT_TAILLE 7
@@ -40,19 +39,6 @@ int main(void) {
 	};
 
 	afficherBateauxParTaxeDecroissante(port, PORT_TAILLE);
-
-	double test[] = {2.0, 3.0, 2.3, 4.6, 2.7};
-
-	double moyen = moyenne(test, 5);
-
-	double somm = somme(test, 5);
-
-	double median = mediane(test, 5);
-
-	double ecartTyp = ecartType(test, 5);
-
-	printf("Moyenne : %g | Somme : %g | Médianne : %g | Écart-type : %g\n", moyen,
-			 somm, median, ecartTyp);
 
 	return EXIT_SUCCESS;
 }
