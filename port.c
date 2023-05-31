@@ -90,6 +90,10 @@ void afficherBateauxStatistiquesParType(const Bateau* bateau, size_t taille) {
 	afficherStatistique("plaisance", taxeBateauPlaisance, tailleTaxeBateauPlaisance);
 	afficherStatistique("peche", taxeBateauPeche, tailleTaxeBateauPeche);
 	afficherStatistique("voilier", taxeBateauVoilier, tailleTaxeBateauVoilier);
+
+	free(taxeBateauPlaisance);
+	free(taxeBateauPeche);
+	free(taxeBateauVoilier);
 }
 
 void afficherStatistique(const char* texte, const double* taxe, size_t taille) {
