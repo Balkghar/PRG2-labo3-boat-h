@@ -4,9 +4,9 @@
   Auteur(s)      : Samuel Roland, Hugo Germano, Patrick Maillard
   Date creation  : 30.05.2023
 
-  Description    : le but du programme et non le but du laboratoire !!
+  Description    : Définition des fonctions de statistique.h
 
-  Remarque(s)    : à compléter
+  Remarque(s)    : -
 
   Compilateur : gcc 12.3.1
   ---------------------------------------------------------------------------
@@ -19,7 +19,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-// est ce qu'on met le tri dans une autre fonction ou non
 double mediane(const double* tableau, size_t taille) {
 
 	double* copieDeTableau = calloc(taille, sizeof(double));

@@ -4,9 +4,10 @@
   Auteur(s)      : Samuel Roland, Hugo Germano, Patrick Maillard
   Date creation  : 30.05.2023
 
-  Description    : le but du programme et non le but du laboratoire !!
+  Description    : Création des différents bateaux de notre port afin de tester
+  différent cas pour voir si notre code fonctionne.
 
-  Remarque(s)    : à compléter
+  Remarque(s)    : -
 
   Compilateur : gcc 12.3.1
   ---------------------------------------------------------------------------
@@ -66,7 +67,7 @@ int main(void) {
 	printf("Affichage des %" PRIuMAX " bateaux du port:\n\n", TAILLE_PORT);
 	afficherBateauxParTaxeDecroissante(port, TAILLE_PORT);
 
-	printf("\nStatistiques sur différents types de bateau :\n\n");
+	printf("\nStatistiques sur differents types de bateau :\n\n");
 
 	afficherBateauxStatistiquesParType(port, TAILLE_PORT);
 
