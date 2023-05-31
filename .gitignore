@@ -3,3 +3,5 @@ build
 cmake-build-debug
 Labo_3.pdf
 !.gitignore
+
+todos.md
