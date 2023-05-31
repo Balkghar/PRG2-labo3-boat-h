@@ -49,44 +49,59 @@ void afficherBateauxParTaxeDecroissante(const Bateau* bateau, size_t taille) {
 
 void afficherBateauxStatistiquesParType(const Bateau* bateau, size_t taille) {
 
-	double* taxeBateauPlaisance = calloc(0, sizeof(double));
-	size_t tailleTaxeBateauPlaisance = 0;
-	double* taxeBateauPeche = calloc(0, sizeof(double));
-	size_t tailleTaxeBateauPeche = 0;
-	double* taxeBateauVoilier = calloc(0, sizeof(double));
 	size_t tailleTaxeBateauVoilier = 0;
+	size_t tailleTaxeBateauPeche = 0;
+	size_t tailleTaxeBateauPlaisance = 0;
 
-
+	//calcul de la taille des tableaux pour les taxes pour chaque type de bateau
 	for (size_t i = 0; i < taille; i++) {
 		switch (bateau[i].type) {
 			case MOTEUR:
 				switch (bateau[i].details.motorise.sousCategorie) {
 					case PLAISANCE:
 						++tailleTaxeBateauPlaisance;
-						taxeBateauPlaisance =
-							realloc(taxeBateauPlaisance,
-									  tailleTaxeBateauPlaisance * sizeof(double));
-						taxeBateauPlaisance[tailleTaxeBateauPlaisance - 1] =
-							calculBateauTaxe(&bateau[i]);
 						break;
 					case PECHE:
 						++tailleTaxeBateauPeche;
-						taxeBateauPeche = realloc(taxeBateauPeche,
-														  tailleTaxeBateauPeche * sizeof(double));
-						taxeBateauPeche[tailleTaxeBateauPeche - 1] =
-							calculBateauTaxe(&bateau[i]);
 						break;
 				}
 				break;
 			case VOILIER:
 				++tailleTaxeBateauVoilier;
-				taxeBateauVoilier =
-					realloc(taxeBateauVoilier, tailleTaxeBateauVoilier * sizeof(double));
-				taxeBateauVoilier[tailleTaxeBateauVoilier - 1] =
-					calculBateauTaxe(&bateau[i]);
 				break;
 		}
 	}
+
+	double* taxeBateauVoilier = calloc(tailleTaxeBateauVoilier, sizeof(double));
+	double* taxeBateauPeche = calloc(tailleTaxeBateauPeche, sizeof(double));
+	double* taxeBateauPlaisance = calloc(tailleTaxeBateauPlaisance, sizeof(double));
+
+	size_t indexVoilier = 0;
+	size_t indexPeche = 0;
+	size_t indexPlaisance = 0;
+
+	//calcul des taxes pour chaque types de bateaux
+	for (size_t i = 0; i < taille; i++) {
+		switch (bateau[i].type) {
+			case MOTEUR:
+				switch (bateau[i].details.motorise.sousCategorie) {
+					case PLAISANCE:
+						taxeBateauPlaisance[indexPlaisance] = calculBateauTaxe(&bateau[i]);
+						++indexPlaisance;
+						break;
+					case PECHE:
+						taxeBateauPeche[indexPeche] = calculBateauTaxe(&bateau[i]);
+						++indexPeche;
+						break;
+				}
+				break;
+			case VOILIER:
+				taxeBateauVoilier[indexVoilier] = calculBateauTaxe(&bateau[i]);
+				++indexVoilier;
+				break;
+		}
+	}
+
 	afficherStatistique("plaisance", taxeBateauPlaisance, tailleTaxeBateauPlaisance);
 	afficherStatistique("peche", taxeBateauPeche, tailleTaxeBateauPeche);
 	afficherStatistique("voilier", taxeBateauVoilier, tailleTaxeBateauVoilier);
@@ -102,15 +117,10 @@ void afficherStatistique(const char* texte, const double* taxe, size_t taille) {
 
 	printf("Statistiques pour les taxes sur les bateaux de type %s\n\n", texte);
 
-	double valeurMoyenne = moyenne(taxe, taille);
-	double valeurMediane = mediane(taxe, taille);
-	double valeurSomme = somme(taxe, taille);
-	double valeurEcartType = ecartType(taxe, taille);
-
-	printf("Moyenne    : %g " MONNAIE "\n", valeurMoyenne);
-	printf("Mediane    : %g " MONNAIE "\n", valeurMediane);
-	printf("Somme      : %g " MONNAIE "\n", valeurSomme);
-	printf("Ecart-type : %g " MONNAIE "\n", valeurEcartType);
+	printf("Moyenne    : %.2f " MONNAIE "\n", moyenne(taxe, taille));
+	printf("Mediane    : %.2f " MONNAIE "\n", mediane(taxe, taille));
+	printf("Somme      : %.2f " MONNAIE "\n", somme(taxe, taille));
+	printf("Ecart-type : %.2f " MONNAIE "\n", ecartType(taxe, taille));
 
 	printf("\n================================================\n\n");
 }

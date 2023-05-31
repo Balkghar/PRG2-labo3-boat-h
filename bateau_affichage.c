@@ -18,7 +18,7 @@
 void afficherBateau(const TaxeCalculee* taxeCalculee) {
 	printf("================================================\n");
 
-	printf("Nom: %s\n", taxeCalculee->bateau->nom);
+	printf("Nom : %s\n", taxeCalculee->bateau->nom);
 
 	printf("Bateau a %s", BATEAU_TYPES[taxeCalculee->bateau->type]);
 
@@ -43,7 +43,7 @@ void afficherBateau(const TaxeCalculee* taxeCalculee) {
 					printf(
 						"Longueur du bateau : %" PRIu8 " m\n",
 						taxeCalculee->bateau->details.motorise.details.plaisance.longueur);
-					printf("Nom du proprietaire %s\n",
+					printf("Nom du proprietaire : %s\n",
 							 taxeCalculee->bateau->details.motorise.details.plaisance
 								 .proprietaire);
 					break;
