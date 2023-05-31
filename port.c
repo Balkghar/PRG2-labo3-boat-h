@@ -96,7 +96,7 @@ void afficherStatistique(const char* texte, const double* taxe, size_t taille) {
 	printf("================================================\n");
 
 
-	printf("Statistiques sur les bateaux de type %s\n\n", texte);
+	printf("Statistiques pour les taxes sur les bateaux de type %s\n\n", texte);
 
 	double valeurMoyenne = moyenne(taxe, taille);
 	double valeurMediane = mediane(taxe, taille);
