@@ -23,7 +23,7 @@
 //Struct permettant de stocker la taxe calculée pour un bateau donné
 typedef struct {
 	Taxe taxe;
-	const Bateau* BATEAU;
+	const Bateau* bateau;
 } TaxeCalculee;
 
 //Fonction de comparaison décroissante des taxes dans TaxeCalculee, pour qsort()

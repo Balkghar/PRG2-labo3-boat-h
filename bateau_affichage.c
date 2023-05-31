@@ -18,40 +18,40 @@
 void afficherBateau(const TaxeCalculee* taxeCalculee) {
 	printf("================================================\n");
 
-	printf("Nom : %s\n", taxeCalculee->BATEAU->nom);
+	printf("Nom : %s\n", taxeCalculee->bateau->nom);
 
-	printf("Bateau a %s", BATEAU_TYPES[taxeCalculee->BATEAU->type]);
+	printf("Bateau a %s", BATEAU_TYPES[taxeCalculee->bateau->type]);
 
-	if (taxeCalculee->BATEAU->type == MOTEUR)
+	if (taxeCalculee->bateau->type == MOTEUR)
 		printf(
 			" de %s",
-			BATEAU_CATEGORIES[taxeCalculee->BATEAU->details.motorise.sousCategorie]);
+			BATEAU_CATEGORIES[taxeCalculee->bateau->details.motorise.sousCategorie]);
 
 	printf("\n");
 
-	switch (taxeCalculee->BATEAU->type) {
+	switch (taxeCalculee->bateau->type) {
 		case MOTEUR:
 			printf("Puissance du moteur : %" PRIu16 " CV\n",
-					 taxeCalculee->BATEAU->details.motorise.puissanceMoteurs);
-			switch (taxeCalculee->BATEAU->details.motorise.sousCategorie) {
+					 taxeCalculee->bateau->details.motorise.puissanceMoteurs);
+			switch (taxeCalculee->bateau->details.motorise.sousCategorie) {
 				case PECHE:
 					printf(
 						"Poids maximum de peche : %" PRIu8 " T\n",
-						taxeCalculee->BATEAU->details.motorise.details.peche.tonnageMax);
+						taxeCalculee->bateau->details.motorise.details.peche.tonnageMax);
 					break;
 				case PLAISANCE:
 					printf(
 						"Longueur du bateau : %" PRIu8 " m\n",
-						taxeCalculee->BATEAU->details.motorise.details.plaisance.longueur);
+						taxeCalculee->bateau->details.motorise.details.plaisance.longueur);
 					printf("Nom du proprietaire : %s\n",
-							 taxeCalculee->BATEAU->details.motorise.details.plaisance
+							 taxeCalculee->bateau->details.motorise.details.plaisance
 								 .proprietaire);
 					break;
 			}
 			break;
 		case VOILIER:
 			printf("Surface de la voilure : %" PRIu16 " m^2\n",
-					 taxeCalculee->BATEAU->details.voilier.surfaceVoilure);
+					 taxeCalculee->bateau->details.voilier.surfaceVoilure);
 			break;
 	}
 	printf("Taxe annuelle : %g " MONNAIE "\n", taxeCalculee->taxe);
