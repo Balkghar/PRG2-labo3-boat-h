@@ -23,13 +23,12 @@
 double mediane(const double* tableau, size_t taille) {
 
 	double* copieDeTableau = calloc(taille, sizeof(double));
-	double valeurMediane;
 
 	memcpy(copieDeTableau, tableau, taille * sizeof(double));
 
 	qsort(copieDeTableau, taille, sizeof(double), comparerDouble);
 
-	valeurMediane =
+	double valeurMediane =
 		taille % 2
 			? copieDeTableau[taille / 2]
 			: (copieDeTableau[taille / 2 - 1] + copieDeTableau[taille / 2]) / 2.0;
