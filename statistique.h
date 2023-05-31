@@ -4,9 +4,10 @@
   Auteur(s)      : Samuel Roland, Hugo Germano, Patrick Maillard
   Date creation  : 30.05.2023
   
-  Description    : le but du programme et non le but du laboratoire !!
+  Description    : Ce fichier contient les déclarations des fonctions
+  permettant le calcul de statistique
 
-  Remarque(s)    : à compléter
+  Remarque(s)    : -
 
   Compilateur : gcc 12.3.1
   ---------------------------------------------------------------------------

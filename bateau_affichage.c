@@ -4,9 +4,9 @@
   Auteur(s)      : Samuel Roland, Hugo Germano, Patrick Maillard
   Date creation  : 30.05.2023
 
-  Description    : le but du programme et non le but du laboratoire !!
+  Description    : Définition de la fonction de bateau_affichage.h
 
-  Remarque(s)    : à compléter
+  Remarque(s)    : -
 
   Compilateur : gcc 12.3.1
   ---------------------------------------------------------------------------
@@ -18,40 +18,40 @@
 void afficherBateau(const TaxeCalculee* taxeCalculee) {
 	printf("================================================\n");
 
-	printf("Nom : %s\n", taxeCalculee->bateau->nom);
+	printf("Nom : %s\n", taxeCalculee->BATEAU->nom);
 
-	printf("Bateau a %s", BATEAU_TYPES[taxeCalculee->bateau->type]);
+	printf("Bateau a %s", BATEAU_TYPES[taxeCalculee->BATEAU->type]);
 
-	if (taxeCalculee->bateau->type == MOTEUR)
+	if (taxeCalculee->BATEAU->type == MOTEUR)
 		printf(
 			" de %s",
-			BATEAU_CATEGORIES[taxeCalculee->bateau->details.motorise.sousCategorie]);
+			BATEAU_CATEGORIES[taxeCalculee->BATEAU->details.motorise.sousCategorie]);
 
 	printf("\n");
 
-	switch (taxeCalculee->bateau->type) {
+	switch (taxeCalculee->BATEAU->type) {
 		case MOTEUR:
 			printf("Puissance du moteur : %" PRIu16 " CV\n",
-					 taxeCalculee->bateau->details.motorise.puissanceMoteurs);
-			switch (taxeCalculee->bateau->details.motorise.sousCategorie) {
+					 taxeCalculee->BATEAU->details.motorise.puissanceMoteurs);
+			switch (taxeCalculee->BATEAU->details.motorise.sousCategorie) {
 				case PECHE:
 					printf(
 						"Poids maximum de peche : %" PRIu8 " T\n",
-						taxeCalculee->bateau->details.motorise.details.peche.tonnageMax);
+						taxeCalculee->BATEAU->details.motorise.details.peche.tonnageMax);
 					break;
 				case PLAISANCE:
 					printf(
 						"Longueur du bateau : %" PRIu8 " m\n",
-						taxeCalculee->bateau->details.motorise.details.plaisance.longueur);
+						taxeCalculee->BATEAU->details.motorise.details.plaisance.longueur);
 					printf("Nom du proprietaire : %s\n",
-							 taxeCalculee->bateau->details.motorise.details.plaisance
+							 taxeCalculee->BATEAU->details.motorise.details.plaisance
 								 .proprietaire);
 					break;
 			}
 			break;
 		case VOILIER:
 			printf("Surface de la voilure : %" PRIu16 " m^2\n",
-					 taxeCalculee->bateau->details.voilier.surfaceVoilure);
+					 taxeCalculee->BATEAU->details.voilier.surfaceVoilure);
 			break;
 	}
 	printf("Taxe annuelle : %g " MONNAIE "\n", taxeCalculee->taxe);

@@ -4,9 +4,10 @@
   Auteur(s)      : Samuel Roland, Hugo Germano, Patrick Maillard
   Date creation  : 30.05.2023
   
-  Description    : le but du programme et non le but du laboratoire !!
+  Description    : Ce fichier contient la déclaration des fonctions permettant le
+  calcul des taxes de chaque bateau.
 
-  Remarque(s)    : à compléter
+  Remarque(s)    : -
 
   Compilateur : gcc 12.3.1
   ---------------------------------------------------------------------------

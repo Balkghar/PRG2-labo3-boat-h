@@ -4,9 +4,9 @@
   Auteur(s)      : Samuel Roland, Hugo Germano, Patrick Maillard
   Date creation  : 30.05.2023
   
-  Description    : le but du programme et non le but du laboratoire !!
+  Description    : Définition des fonctions de port.h
 
-  Remarque(s)    : à compléter
+  Remarque(s)    : -
 
   Compilateur : gcc 12.3.1
   ---------------------------------------------------------------------------
@@ -22,7 +22,19 @@
 #include <stddef.h>
 #include <stdio.h>
 
-void afficherStatistique(const char* texte, const double* taxe, size_t taille);
+void afficherStatistique(const char* texte, const double* taxe, size_t taille) {
+	printf("================================================\n");
+
+
+	printf("Statistiques pour les taxes sur les bateaux de type %s\n\n", texte);
+
+	printf("Moyenne    : %.2f " MONNAIE "\n", moyenne(taxe, taille));
+	printf("Mediane    : %.2f " MONNAIE "\n", mediane(taxe, taille));
+	printf("Somme      : %.2f " MONNAIE "\n", somme(taxe, taille));
+	printf("Ecart-type : %.2f " MONNAIE "\n", ecartType(taxe, taille));
+
+	printf("\n================================================\n\n");
+}
 
 int comparerTaxeDesc(const void* a, const void* b) {
 	return (int) ((*(TaxeCalculee*) b).taxe - (*(TaxeCalculee*) a).taxe);
@@ -35,7 +47,7 @@ void afficherBateauxParTaxeDecroissante(const Bateau* bateau, size_t taille) {
 
 	for (size_t i = 0; i < taille; i++) {
 		taxesCalculees[i].taxe = calculBateauTaxe(&bateau[i]);
-		taxesCalculees[i].bateau = &bateau[i];
+		taxesCalculees[i].BATEAU = &bateau[i];
 	}
 
 	//Trier les bateaux par la taxe, dans l'ordre décroissant
@@ -80,7 +92,7 @@ void afficherBateauxStatistiquesParType(const Bateau* bateau, size_t taille) {
 	size_t indexPeche = 0;
 	size_t indexPlaisance = 0;
 
-	//calcul des taxes pour chaque types de bateaux
+	//calcul des taxes pour chaque type de bateaux
 	for (size_t i = 0; i < taille; i++) {
 		switch (bateau[i].type) {
 			case MOTEUR:
@@ -111,16 +123,4 @@ void afficherBateauxStatistiquesParType(const Bateau* bateau, size_t taille) {
 	free(taxeBateauVoilier);
 }
 
-void afficherStatistique(const char* texte, const double* taxe, size_t taille) {
-	printf("================================================\n");
 
-
-	printf("Statistiques pour les taxes sur les bateaux de type %s\n\n", texte);
-
-	printf("Moyenne    : %.2f " MONNAIE "\n", moyenne(taxe, taille));
-	printf("Mediane    : %.2f " MONNAIE "\n", mediane(taxe, taille));
-	printf("Somme      : %.2f " MONNAIE "\n", somme(taxe, taille));
-	printf("Ecart-type : %.2f " MONNAIE "\n", ecartType(taxe, taille));
-
-	printf("\n================================================\n\n");
-}
