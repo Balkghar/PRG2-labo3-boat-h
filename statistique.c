@@ -55,7 +55,7 @@ double ecartType(const double* tableau, size_t taille) {
 	for (size_t i = 0; i < taille; ++i)
 		sommeCarreDifference += pow(tableau[i] - valeurMoyenne, 2.0);
 
-	return sqrt(sommeCarreDifference /= (double) taille);
+	return sqrt(sommeCarreDifference / (double) taille);
 }
 
 int comparerDouble(const void* a, const void* b) {

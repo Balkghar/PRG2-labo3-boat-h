@@ -68,7 +68,7 @@ void afficherBateauxStatistiquesParType(const Bateau* bateau, size_t taille) {
 	size_t tailleTaxeBateauPeche = 0;
 	size_t tailleTaxeBateauPlaisance = 0;
 
-	//calcul de la taille des tableaux pour les taxes pour chaque type de bateau
+	//Calcul de la taille des tableaux pour les taxes pour chaque type de bateau
 	for (size_t i = 0; i < taille; i++) {
 		switch (bateau[i].type) {
 			case MOTEUR:
@@ -95,24 +95,22 @@ void afficherBateauxStatistiquesParType(const Bateau* bateau, size_t taille) {
 	size_t indexPeche = 0;
 	size_t indexPlaisance = 0;
 
-	//calcul des taxes pour chaque type de bateaux
+	//Calcul des taxes pour chaque type de bateaux
 	for (size_t i = 0; i < taille; i++) {
 		switch (bateau[i].type) {
 			case MOTEUR:
 				switch (bateau[i].details.motorise.sousCategorie) {
 					case PLAISANCE:
-						taxeBateauPlaisance[indexPlaisance] = calculBateauTaxe(&bateau[i]);
-						++indexPlaisance;
+						taxeBateauPlaisance[indexPlaisance++] =
+							calculBateauTaxe(&bateau[i]);
 						break;
 					case PECHE:
-						taxeBateauPeche[indexPeche] = calculBateauTaxe(&bateau[i]);
-						++indexPeche;
+						taxeBateauPeche[indexPeche++] = calculBateauTaxe(&bateau[i]);
 						break;
 				}
 				break;
 			case VOILIER:
-				taxeBateauVoilier[indexVoilier] = calculBateauTaxe(&bateau[i]);
-				++indexVoilier;
+				taxeBateauVoilier[indexVoilier++] = calculBateauTaxe(&bateau[i]);
 				break;
 		}
 	}
