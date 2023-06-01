@@ -15,6 +15,10 @@
 #ifndef BATEAU_H
 #define BATEAU_H
 #include "inttypes.h"
+#define PUISSANCE_MOTEURS_UNITE "CV"
+#define LONGUEUR_BATEAU_UNITE "m"
+#define TONNAGE_PECHE_UNITE "t"
+#define SURFACE_VOILURE_UNITE "m^2"
 
 typedef enum { MOTEUR, VOILIER } BateauType;
 static const char* const BATEAU_TYPES[] = {"moteur", "voile"};

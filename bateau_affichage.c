@@ -12,7 +12,7 @@
   ---------------------------------------------------------------------------
 */
 #include "bateau_affichage.h"
-//#include "bateau.h"
+#include "bateau.h"
 #include <stdio.h>
 
 void afficherBateau(const TaxeCalculee* taxeCalculee) {
@@ -31,17 +31,17 @@ void afficherBateau(const TaxeCalculee* taxeCalculee) {
 
 	switch (taxeCalculee->bateau->type) {
 		case MOTEUR:
-			printf("Puissance du moteur : %" PRIu16 " CV\n",
+			printf("Puissance du moteur : %" PRIu16 " " PUISSANCE_MOTEURS_UNITE "\n",
 					 taxeCalculee->bateau->details.motorise.puissanceMoteurs);
 			switch (taxeCalculee->bateau->details.motorise.sousCategorie) {
 				case PECHE:
 					printf(
-						"Poids maximum de peche : %" PRIu8 " T\n",
+						"Poids maximum de peche : %" PRIu8 " " TONNAGE_PECHE_UNITE "\n",
 						taxeCalculee->bateau->details.motorise.details.peche.tonnageMax);
 					break;
 				case PLAISANCE:
 					printf(
-						"Longueur du bateau : %" PRIu8 " m\n",
+						"Longueur du bateau : %" PRIu8 " " LONGUEUR_BATEAU_UNITE "\n",
 						taxeCalculee->bateau->details.motorise.details.plaisance.longueur);
 					printf("Nom du proprietaire : %s\n",
 							 taxeCalculee->bateau->details.motorise.details.plaisance
@@ -50,7 +50,7 @@ void afficherBateau(const TaxeCalculee* taxeCalculee) {
 			}
 			break;
 		case VOILIER:
-			printf("Surface de la voilure : %" PRIu16 " m^2\n",
+			printf("Surface de la voilure : %" PRIu16 " " SURFACE_VOILURE_UNITE "\n",
 					 taxeCalculee->bateau->details.voilier.surfaceVoilure);
 			break;
 	}
