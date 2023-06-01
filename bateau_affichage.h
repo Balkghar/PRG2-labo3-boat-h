@@ -19,6 +19,7 @@
 #include "bateau.h"
 #include "port.h"
 
+//Affiche les différentes caractéristiques d'un bateau
 void afficherBateau(const TaxeCalculee* bateau);
 
 #endif
