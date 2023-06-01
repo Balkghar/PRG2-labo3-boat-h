@@ -59,9 +59,5 @@ double ecartType(const double* tableau, size_t taille) {
 }
 
 int comparerDouble(const void* a, const void* b) {
-	if (*(double*) a > *(double*) b) return 1;
-	else if (*(double*) a < *(double*) b)
-		return -1;
-	else
-		return 0;
+	return (int) (*(double*) a - *(double*) b);
 }
