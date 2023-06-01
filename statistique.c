@@ -25,6 +25,7 @@ double mediane(const double* tableau, size_t taille) {
 
 	qsort(copieDeTableau, taille, sizeof(double), comparerDouble);
 
+	//Calcul différent si le tableau est de taille paire ou impaire
 	double valeurMediane =
 		taille % 2
 			? copieDeTableau[taille / 2]
