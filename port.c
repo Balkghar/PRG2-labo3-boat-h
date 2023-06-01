@@ -8,7 +8,7 @@
 
   Remarque(s)    : -
 
-  Compilateur : gcc 12.3.1
+  Compilateur    : gcc 12.3.1
   ---------------------------------------------------------------------------
 */
 
@@ -87,9 +87,11 @@ void afficherBateauxStatistiquesParType(const Bateau* bateau, size_t taille) {
 		}
 	}
 
-	double* taxeBateauVoilier = (double*) calloc(tailleTaxeBateauVoilier, sizeof(double));
+	double* taxeBateauVoilier =
+		(double*) calloc(tailleTaxeBateauVoilier, sizeof(double));
 	double* taxeBateauPeche = (double*) calloc(tailleTaxeBateauPeche, sizeof(double));
-	double* taxeBateauPlaisance = (double*) calloc(tailleTaxeBateauPlaisance, sizeof(double));
+	double* taxeBateauPlaisance =
+		(double*) calloc(tailleTaxeBateauPlaisance, sizeof(double));
 
 	size_t indexVoilier = 0;
 	size_t indexPeche = 0;

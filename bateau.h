@@ -8,7 +8,8 @@
   bateaux du port.
 
   Remarque(s)    : -
-  Compilateur : gcc 12.3.1
+  
+  Compilateur    : gcc 12.3.1
   ---------------------------------------------------------------------------
 */
 
