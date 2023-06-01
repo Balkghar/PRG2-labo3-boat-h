@@ -25,13 +25,16 @@
 void afficherStatistique(const char* texte, const double* taxe, size_t taille) {
 	printf("================================================\n");
 
-
 	printf("Statistiques pour les taxes sur les bateaux de type %s\n\n", texte);
 
-	printf("Moyenne    : %.2f " MONNAIE "\n", moyenne(taxe, taille));
-	printf("Mediane    : %.2f " MONNAIE "\n", mediane(taxe, taille));
-	printf("Somme      : %.2f " MONNAIE "\n", somme(taxe, taille));
-	printf("Ecart-type : %.2f " MONNAIE "\n", ecartType(taxe, taille));
+	if (taille == 0) {
+		printf("Pas de bateaux de ce type...");
+	} else {
+		printf("Moyenne    : %.2f " MONNAIE "\n", moyenne(taxe, taille));
+		printf("Mediane    : %.2f " MONNAIE "\n", mediane(taxe, taille));
+		printf("Somme      : %.2f " MONNAIE "\n", somme(taxe, taille));
+		printf("Ecart-type : %.2f " MONNAIE "\n", ecartType(taxe, taille));
+	}
 
 	printf("\n================================================\n\n");
 }
@@ -114,6 +117,7 @@ void afficherBateauxStatistiquesParType(const Bateau* bateau, size_t taille) {
 		}
 	}
 
+	//Affichage des taxes pour chaque type
 	afficherStatistique("plaisance", taxeBateauPlaisance, tailleTaxeBateauPlaisance);
 	afficherStatistique("peche", taxeBateauPeche, tailleTaxeBateauPeche);
 	afficherStatistique("voilier", taxeBateauVoilier, tailleTaxeBateauVoilier);
@@ -122,5 +126,3 @@ void afficherBateauxStatistiquesParType(const Bateau* bateau, size_t taille) {
 	free(taxeBateauPeche);
 	free(taxeBateauVoilier);
 }
-
-

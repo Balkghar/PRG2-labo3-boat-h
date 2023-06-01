@@ -26,6 +26,9 @@ typedef struct {
 	const Bateau* bateau;
 } TaxeCalculee;
 
+//Afficher les statistiques pour 
+void afficherStatistique(const char* texte, const double* taxe, size_t taille);
+
 //Fonction de comparaison décroissante des taxes dans TaxeCalculee, pour qsort()
 int comparerTaxeDesc(const void* a, const void* b);
 

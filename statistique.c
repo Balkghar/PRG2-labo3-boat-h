@@ -19,7 +19,7 @@
 
 double mediane(const double* tableau, size_t taille) {
 
-	double* copieDeTableau = calloc(taille, sizeof(double));
+	double* copieDeTableau = (double*) calloc(taille, sizeof(double));
 
 	memcpy(copieDeTableau, tableau, taille * sizeof(double));
 
