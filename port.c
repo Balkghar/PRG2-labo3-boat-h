@@ -87,9 +87,9 @@ void afficherBateauxStatistiquesParType(const Bateau* bateau, size_t taille) {
 		}
 	}
 
-	double* taxeBateauVoilier = calloc(tailleTaxeBateauVoilier, sizeof(double));
-	double* taxeBateauPeche = calloc(tailleTaxeBateauPeche, sizeof(double));
-	double* taxeBateauPlaisance = calloc(tailleTaxeBateauPlaisance, sizeof(double));
+	double* taxeBateauVoilier = (double*) calloc(tailleTaxeBateauVoilier, sizeof(double));
+	double* taxeBateauPeche = (double*) calloc(tailleTaxeBateauPeche, sizeof(double));
+	double* taxeBateauPlaisance = (double*) calloc(tailleTaxeBateauPlaisance, sizeof(double));
 
 	size_t indexVoilier = 0;
 	size_t indexPeche = 0;
